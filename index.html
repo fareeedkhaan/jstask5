@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <h1>Javascript Task-17</h1>
+<script>
+    try {
+  console.log(myVar);
+} catch (error) {
+  console.log("Error caught: " + error.message);
+}
+</script>
+<script>
+function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Divide by Zero Error");
+  }
+  return a / b;
+}
+
+try {
+  let result = divide(10, 0);
+  console.log(result);
+} catch (error) {
+  console.log("Error caught: " + error.message);
+}
+</script>
+<script>
+function getElement(arr, index) {
+  if (index >= arr.length || index < 0) {
+    throw new Error("Out of Bound Error");
+  }
+  return arr[index];
+}
+
+try {
+  let numbers = [10, 20, 30];
+  console.log(getElement(numbers, 5)); // Invalid index
+} catch (error) {
+  console.log("Error caught: " + error.message);
+}
+</script>
+<script>
+    try {
+  let result = 10 / 0;
+  if (!isFinite(result)) {
+    throw new Error("Cannot divide by zero");
+  }
+  console.log(result);
+} catch (error) {
+  console.log("Caught: " + error.message);
+} finally {
+  console.log("This block always runs (cleanup, close files, etc.)");
+}
+
+</script>
+</body>
+</html>
