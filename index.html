@@ -3,17 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <style>
+    h3{
+      color: black;
+    }
+    body{
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+    }
+    .main{
+      margin: auto;
+    }
+    .boxes{
+      display: flex;
+      flex-direction: row;
+    }
+    .box{
+      width: 300px;
+      height: 150px;
+      border: 2px solid black;
+      margin: 2px;
+      color: brown;
+      background-color: rgb(251, 232, 207);
+      text-align: center;
+    }
+    @media(max-width: 1000px) {
+      .boxes{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    
+  </style>
 </head>
 <body>
-    <h1>Javascript Task-17</h1>
+    
+    <div class="main">
+      <h1>Javascript Task-17</h1>
+      <div class="boxes">
+    <div class="box">
+      <h3>1. </h3>
+      <p id="output1"></p>
+    </div>
+    <div class="box">
+      <h3>2.</h3>
+      <p id="output2"></p>
+    </div>
+    <div class="box">
+      <h3>3.</h3>
+      <p id="output3"></p>
+    </div>
+    <div class="box">
+      <h3>4.</h3>
+      <p id="output4"></p>
+      <p id="finally"></p>
+    </div>
+    </div>
+    </div>
 <script>
     try {
   console.log(myVar);
-} catch (error) {
+} 
+  catch (error) {
   console.log("Error caught: " + error.message);
+  document.getElementById("output1").innerText = "Error caught: " + error.message;
 }
 </script>
+
 <script>
 function divide(a, b) {
   if (b === 0) {
@@ -22,13 +79,16 @@ function divide(a, b) {
   return a / b;
 }
 
-try {
+  try {
   let result = divide(10, 0);
   console.log(result);
-} catch (error) {
+   }
+    catch (error) {
   console.log("Error caught: " + error.message);
+  document.getElementById("output2").innerText = "Error caught: " + error.message;
 }
 </script>
+
 <script>
 function getElement(arr, index) {
   if (index >= arr.length || index < 0) {
@@ -39,9 +99,11 @@ function getElement(arr, index) {
 
 try {
   let numbers = [10, 20, 30];
-  console.log(getElement(numbers, 5)); // Invalid index
-} catch (error) {
+  console.log(getElement(numbers, 3)); // Invalid index
+}
+ catch (error) {
   console.log("Error caught: " + error.message);
+  document.getElementById("output3").innerText = "Error caught: " + error.message;
 }
 </script>
 <script>
@@ -51,10 +113,14 @@ try {
     throw new Error("Cannot divide by zero");
   }
   console.log(result);
-} catch (error) {
-  console.log("Caught: " + error.message);
-} finally {
-  console.log("This block always runs (cleanup, close files, etc.)");
+} 
+catch (error) {
+  console.log("Error caught: " + error.message);
+  document.getElementById("output4").innerText = "Error caught: " + error.message;
+} 
+finally {
+  console.log("Program finished successfully.");
+  document.getElementById("finally").innerHTML = "Program finished successfully.";
 }
 
 </script>
