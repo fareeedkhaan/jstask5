@@ -1,128 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First JS Page</title>
   <style>
-    h3{
-      color: black;
+    h1{
+        text-align: center;
     }
-    body{
-      text-align: center;
-      display: flex;
-      flex-direction: row;
+    p{
+        margin: auto;
+        border: 2px solid black;
+        height: 30px;
+        text-align: center;
+        max-width: 1000px;
+        margin-top: 20px;
     }
-    .main{
-      margin: auto;
-    }
-    .boxes{
-      display: flex;
-      flex-direction: row;
-    }
-    .box{
-      width: 300px;
-      height: 150px;
-      border: 2px solid black;
-      margin: 2px;
-      color: brown;
-      background-color: rgb(251, 232, 207);
-      text-align: center;
-    }
-    @media(max-width: 1000px) {
-      .boxes{
-        display: flex;
-        flex-direction: column;
-      }
-    }
-    
   </style>
 </head>
 <body>
-    
-    <div class="main">
-      <h1>Javascript Task-17</h1>
-      <div class="boxes">
-    <div class="box">
-      <h3>1. </h3>
-      <p id="output1"></p>
-    </div>
-    <div class="box">
-      <h3>2.</h3>
-      <p id="output2"></p>
-    </div>
-    <div class="box">
-      <h3>3.</h3>
-      <p id="output3"></p>
-    </div>
-    <div class="box">
-      <h3>4.</h3>
-      <p id="output4"></p>
-      <p id="finally"></p>
-    </div>
-    </div>
-    </div>
-<script>
-    try {
-  console.log(myVar);
-} 
-  catch (error) {
-  console.log("Error caught: " + error.message);
-  document.getElementById("output1").innerText = "Error caught: " + error.message;
-}
-</script>
 
-<script>
-function divide(a, b) {
-  if (b === 0) {
-    throw new Error("Divide by Zero Error");
-  }
-  return a / b;
-}
+  <h1>Hello JavaScript</h1>
 
-  try {
-  let result = divide(10, 0);
-  console.log(result);
-   }
-    catch (error) {
-  console.log("Error caught: " + error.message);
-  document.getElementById("output2").innerText = "Error caught: " + error.message;
-}
-</script>
+  <script>
+    // Print name and address
+    let name = "Fareed Khan";
+    let address = "Bihar";
 
-<script>
-function getElement(arr, index) {
-  if (index >= arr.length || index < 0) {
-    throw new Error("Out of Bound Error");
-  }
-  return arr[index];
-}
+    document.write(`<p><strong>Name:</strong> ${name}</p>`);
+    document.write(`<p><strong>Address:</strong> ${address}</p>`);
 
-try {
-  let numbers = [10, 20, 30];
-  console.log(getElement(numbers, 3)); // Invalid index
-}
- catch (error) {
-  console.log("Error caught: " + error.message);
-  document.getElementById("output3").innerText = "Error caught: " + error.message;
-}
-</script>
-<script>
-    try {
-  let result = 10 / 0;
-  if (!isFinite(result)) {
-    throw new Error("Cannot divide by zero");
-  }
-  console.log(result);
-} 
-catch (error) {
-  console.log("Error caught: " + error.message);
-  document.getElementById("output4").innerText = "Error caught: " + error.message;
-} 
-finally {
-  console.log("Program finished successfully.");
-  document.getElementById("finally").innerHTML = "Program finished successfully.";
-}
+    // Check same value or type
+    let a = 10;
+    let b = "10";
 
-</script>
+    if (a === b) {
+      document.write("<p>Same value and type</p>");
+    } else {
+      document.write("<p>Different value or type</p>");
+    }
+
+    // Add two strings in uppercase
+    let str1 = "hello";
+    let str2 = "world";
+    let combined = (str1 + str2).toUpperCase();
+
+    document.write(`<p><strong>Combined Uppercase:</strong> ${combined}</p>`);
+
+    // Convert length of string to bytes
+    let text = "Hello";
+    let byteLength = new TextEncoder().encode(text).length;
+
+    document.write(`<p>"${text}" uses ${byteLength} byte(s)</p>`);
+
+    // Round a number to specific digits
+    let num = 314.159;
+    let digits = 2;
+    let rounded = Math.round(num * Math.pow(10, digits)) / Math.pow(10, digits);
+
+    document.write(`<p><strong>Rounded Number:</strong> ${rounded}</p>`);
+  </script>
+
 </body>
 </html>
